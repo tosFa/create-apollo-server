@@ -9,4 +9,5 @@ bootstrap a new instance of GQL server
 # Generate new GQL API instance
 
 `node index.js init new-server`
+
 `cd output/new-server && yarn start`
