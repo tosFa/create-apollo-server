@@ -33,6 +33,16 @@ const inputSchemaStep1 = {
       default: 8080,
       type: 'integer',
     },
+    path: {
+      description: 'Path to your GraphQL API.',
+      default: 'graphql',
+      type: 'string',
+    },
+    graphiqlPath: {
+      description: 'Path to your graphiql interface.',
+      default: 'graphiql',
+      type: 'string',
+    },
     dataloader: {
       description: 'Add dataloader to the list of dependencies',
       default: true,
@@ -52,6 +62,11 @@ const inputSchemaSubscriptions = {
       description: 'Port you want your GraphQL subscription server to run on',
       default: 8090,
       type: 'integer',
+    },
+    subscriptionsPath: {
+      description: 'Path to your subscription server',
+      default: '/',
+      type: 'string',
     },
     subscriptionsEngine: {
       description: 'Port you want your GraphQL subscription server to run on',

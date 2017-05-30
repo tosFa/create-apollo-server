@@ -43,17 +43,14 @@ const graphql = (config) => {
   return `
     const graphQLServer = express().use('*', cors());
     
-    graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress({
+    graphQLServer.use(\`/\${process.env.GRAPHQL_PATH}\`, bodyParser.json(), graphqlExpress({
       schema,
       context: {},
     }));
 
-    graphQLServer.use('/schema', (req, res) => {
-      res.set('Content-Type', 'text/plain');
-      res.send(printSchema(schema));
-    });
+    
     graphQLServer.listen(process.env.GRAPHQL_PORT, () => console.log(
-      \`GraphQL Server is now running on http://localhost:\${process.env.GRAPHQL_PORT}/graphql\`
+      \`GraphQL Server is now running on http://localhost:\${process.env.GRAPHQL_PORT}/\${process.env.GRAPHQL_PATH}\`
     ));
   `;
 };
@@ -67,16 +64,16 @@ const graphql = (config) => {
 const graphiql = (config) => {
   if (config.subscriptions) {
     return `
-    graphQLServer.use('/graphiql', graphiqlExpress({
-      endpointURL: '/graphql',
-      subscriptionsEndpoint: \`ws://localhost:\${process.env.WS_PORT}/\`,
+    graphQLServer.use(\`/\${process.env.GRAPHIQL_PATH}\`, graphiqlExpress({
+      endpointURL: \`/\${process.env.GRAPHQL_PATH}\`,
+      subscriptionsEndpoint: \`ws://localhost:\${process.env.WS_PORT}\${process.env.WS_PATH}\`,
     }));
     `;
   }
 
   return `
-    graphQLServer.use('/graphiql', graphiqlExpress({
-      endpointURL: '/graphql',
+    graphQLServer.use(\`/\${process.env.GRAPHIQL_PATH}\`, graphiqlExpress({
+      endpointURL: \`/\${process.env.GRAPHIQL_PATH}\`,
     }));
     `;
 };
@@ -99,7 +96,7 @@ const subscriptionServer = (config) => {
     });
 
     websocketServer.listen(process.env.WS_PORT, () => console.log( // eslint-disable-line no-console
-      \`Websocket Server is now running on ws://localhost:\${process.env.WS_PORT}\`
+      \`Websocket Server is now running on ws://localhost:\${process.env.WS_PORT}\${process.env.WS_PATH}\`
         ));
     
     // eslint-disable-next-line
@@ -111,7 +108,7 @@ const subscriptionServer = (config) => {
       },
       {
         server: websocketServer,
-        path: '/',
+        path: \`\${process.env.WS_PATH}\`,
       },
     );
   `;

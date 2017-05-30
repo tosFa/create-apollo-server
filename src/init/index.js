@@ -98,8 +98,6 @@ function init(config) {
         fileWriter(subscriptionsFile, prettier.format(generators.subscriptions(config)));
       }
 
-
-
       const args = (shouldUseYarn() ? ['add'] : ['install', '--save', '--save-exact'])
         .concat(dependencies.common).concat(devDpendencies.common).concat(dependencies.subscriptions);
       const command = shouldUseYarn() ? `yarnpkg` : 'npm';
