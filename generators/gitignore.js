@@ -1,0 +1,17 @@
+const generator = (config) => {
+  return `
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+  `;
+};
+
+module.exports = generator;

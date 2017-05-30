@@ -1,0 +1,15 @@
+{
+  "name": "graphql-service",
+  "version": "0.0.1",
+  "description": "GraphQL service boostrap",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon --exec babel-node server.js"
+  },
+  "engines": {
+    "node": "7.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
