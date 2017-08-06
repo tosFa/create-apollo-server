@@ -1,6 +1,10 @@
 {
-  "name": "create-apollo-server",
+  "name": "bootstrap-gql-server",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tosFa/bootstrap-gql-server.git"
+  },
   "description": "Bootstrap an instance of Apollo GraphQL server",
   "main": "src/index.js",
   "scripts": {

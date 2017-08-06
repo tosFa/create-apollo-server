@@ -4,21 +4,13 @@ const program = require('commander');
 const chalk = require('chalk');
 const prompt = require('prompt');
 const init = require('./src/init/index');
-
-let config = {
-  name: '',
-  port: 8080,
-  dataloader: false,
-  subscriptions: false,
-  subscriptionsPort: 8090,
-  subscriptionsEngine: 'pubsub',
-
-};
+const schemas = require('./src/input/schemas');
+let config = require('./src/input/config');
 
 program
   .version('0.0.1')
   .command('init <req> [optional]')
-  .description('bootstrap a new GraphQL server')
+  .description('Bootstrap a new GraphQL server instance')
   .action(function(name){
     console.log(`Bootstraping ${name} GraphQL server`);
 
@@ -26,58 +18,8 @@ program
     configure();
   });
 
-const inputSchemaStep1 = {
-  properties: {
-    port: {
-      description: 'Port you want your GraphQL API to run on',
-      default: 8080,
-      type: 'integer',
-    },
-    path: {
-      description: 'Path to your GraphQL API.',
-      default: 'graphql',
-      type: 'string',
-    },
-    graphiqlPath: {
-      description: 'Path to your graphiql interface.',
-      default: 'graphiql',
-      type: 'string',
-    },
-    dataloader: {
-      description: 'Add dataloader to the list of dependencies',
-      default: true,
-      type: 'boolean',
-    },
-    subscriptions: {
-      description: 'Setup the server to support GraphQL subscriptions',
-      default: true,
-      type: 'boolean',
-    },
-  },
-};
-
-const inputSchemaSubscriptions = {
-  properties: {
-    subscriptionsPort: {
-      description: 'Port you want your GraphQL subscription server to run on',
-      default: 8090,
-      type: 'integer',
-    },
-    subscriptionsPath: {
-      description: 'Path to your subscription server',
-      default: '/',
-      type: 'string',
-    },
-    subscriptionsEngine: {
-      description: 'Port you want your GraphQL subscription server to run on',
-      default: 'pubsub',
-      type: 'string',
-    },
-  },
-};
-
 const configure = () => {
-  prompt.get(inputSchemaStep1, (err, result) => {
+  prompt.get(schemas.inputSchemaStep1, (err, result) => {
     Object.assign(config,result);
 
     if (result.subscriptions) {
@@ -89,7 +31,7 @@ const configure = () => {
 }
 
 const configureSubscriptions = () => {
-  prompt.get(inputSchemaSubscriptions, (err, result) => {
+  prompt.get(schemas.inputSchemaSubscriptions, (err, result) => {
     Object.assign(config,result);
     init(config);
   });
