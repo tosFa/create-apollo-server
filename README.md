@@ -37,11 +37,11 @@ The resulting schema is the same as the one used in the example here https://git
 - Subscription server path: *default* (/) [only if subscriptions support = true]
 - Subscriptions engine: *default* (pubsub) [only if subscriptions support = true]
 
-#Contributing
+# Contributing
 
 This is project is a living thing and it needs caring, if you wan to contribute, please do by submitting PRs, issues...
 
-#Roadmap / What's next
+# Roadmap / What's next
 
 - Add data source support (mySQL, Postegrsql, REST)
 - Add support for koa, hapi, restify...
