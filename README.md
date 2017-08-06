@@ -11,7 +11,6 @@ After initializing a new instance of a graphQL server all dependencies are visib
 # Install
 
 `yarn add global bootstrap-gql-server`
-`yarn`
 
 # Generate new GQL API instance
 
@@ -28,7 +27,7 @@ The resulting schema is the same as the one used in the example here https://git
 
 # Current supported configurations include
 
-- GraphQL API Port:  *default* (8080)
+- GraphQL API port:  *default* (8080)
 - GraphQL API path:  *default* (graphql)
 - Graphiql interface path: *default* (graphiql)
 - Add dataloader to the list of dependencies:  *default* (true)
