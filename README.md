@@ -10,7 +10,7 @@ After initializing a new instance of a graphQL server all dependencies are visib
 
 # Install
 
-`git clone https://github.com/tosFa/bootstrap-gql-server`
+`yarn add global bootstrap-gql-server`
 `yarn`
 
 # Generate new GQL API instance
