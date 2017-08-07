@@ -7,6 +7,7 @@ Unlike the before mentioned projects `bootstrap-gql-server` doesn't hide the imp
 
 After initializing a new instance of a graphQL server all dependencies are visible in the `package.json` file.
 
+All the configuration parameters are visible through a .env file that gets auto-generated
 
 # Install
 
