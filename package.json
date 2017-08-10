@@ -1,6 +1,6 @@
 {
   "name": "create-apollo-server",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "preferGlobal": true,
   "engines": {
     "node": ">=4.0.0"
@@ -13,7 +13,7 @@
     "url": "http://github.com/tosFa/create-apollo-server.git"
   },
   "description": "Bootstrap an instance of Apollo GraphQL server",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "test"
   },
