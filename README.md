@@ -51,6 +51,8 @@ This is project is a living thing and it needs caring, if you wan to contribute,
 - Improving the codebase in general
 - init-advanced, an init command to generate an instance for users with more advanced needs 
 
+# How it looks like
 
+<img src="http://recordit.co/LHo8MGGLm4" />
 
 
