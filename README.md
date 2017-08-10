@@ -53,6 +53,6 @@ This is project is a living thing and it needs caring, if you wan to contribute,
 
 # How it looks like
 
-<img src="http://recordit.co/LHo8MGGLm4" />
+http://recordit.co/LHo8MGGLm4
 
 
