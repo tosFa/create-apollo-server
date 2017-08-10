@@ -1,21 +1,21 @@
-# bootstrap-gql-server
+# Create Apollo Server
 The idea behind this library is to provide a simple way to bootstrap a new graphQL server instance.
 
 Inspired by by projects like `create-react-app` and `create-react-native-app` this project aims to provide a similar service.
  
-Unlike the before mentioned projects `bootstrap-gql-server` doesn't hide the implementation and comes without an `eject` command
+Unlike the before mentioned projects `create-apollo-server` doesn't hide the implementation and comes without an `eject` command
 
 After initializing a new instance of a graphQL server all dependencies are visible in the `package.json` file.
 
-All the configuration parameters are visible through a .env file that gets auto-generated
+All the configuration parameters are visible through a .env file that gets auto-generated and can be changed afterwards.
 
 # Install
 
-`yarn add global bootstrap-gql-server`
+`yarn add global create-apollo-server`
 
 # Generate new GQL API instance
 
-`bootstrap-gql-server init [project-name]`
+`create-apollo-server init [project-name]`
 
 `Follow instructions`
 
